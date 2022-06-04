@@ -6,35 +6,22 @@ app.get('/', (request, response) => {
     response.send('GET is GOT')
 })
 
-// GET /products/683-nike-large-white-shoe HTTP/1.1
-app.get('/products/:productPage', (request, response) => {
+// GET /products/8719 HTTP/1.1
+app.get('/products/:productId', (request, response) => {
     response.send(
-        'Product Page: ' + request.params.productPage)
+        'Product: ' + request.params.productId)
 })
 
-// GET /products/683-nike-large-white-shoe HTTP/1.1
-app.get('/products/:productPage-:productPrice', (request, response) => {
+// GET /products/all?sort=price HTTP/1.1
+app.get('/products/:productId-:productSize-:productColor', (request, response) => {
     response.send(
-        'Product Page: ' + request.params.productPage +
-        'Product Price: ' + request.params.productPrice,
-        )
+        'Product: ' + request.params.productId + request.params.productSize + request.params.productColor)
 })
 
-// GET /products/683-nike-large-white-shoe HTTP/1.1
-app.get('/products/:productPage-:productDesc', (request, response) => {
-    response.send(
-        'Product Page: ' + request.params.productPage +
-        'Product Description: ' + request.params.productDesc,
-        )
-})
-
-// GET /products/683-nike-large-white-shoe HTTP/1.1
+// GET /products/all?sort=price HTTP/1.1
 app.get('/products/:all', (request, response) => {
     response.send(
-        'Product Page: ' + request.params.productPage +
-        'Product Price: ' + request.params.productPrice +
-        'Product Description: ' + request.params.productDesc
-        )
+        'Product: ' + request.params.productId + request.params.productSize + request.params.productColor)
 })
 
 app.listen(3000)
