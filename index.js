@@ -2,8 +2,13 @@ const express = require('express')
 const app = express()
 
 // GET /products/all HTTP/1.1
-app.get('/', (req, res) => {
-    res.send('GET is GOT')
+app.get('/products/all', (req, res) => {
+    if(req.query !== "{}"){
+        res.send(`Products: ${req.headers.page}, ${req.headers.sort}, ${req.headers.order}`)
+    }else{
+        res.send(req.query)
+    }
+    //res.send(`Product: ${req.query.id}`)
 })
 
 // GET /products/8719 HTTP/1.1
