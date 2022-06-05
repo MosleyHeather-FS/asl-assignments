@@ -1,9 +1,11 @@
 let products = [{id: "1", "slug": "nike-shoe", "name": "Nike Shoe"}]
 
+//index
 const all = () => {
     return products
 }
 
+//show
 const find = (id) => {
     return products.find(p => p.id === id)
 }
