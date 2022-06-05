@@ -24,8 +24,4 @@ app.get("/products/:id-:size-:color", (req, res) => {
   );
 });
 
-app.get("/^/pages/([0-9].*)/", (req, res) => {
-  res.send(`Product: ${req.params.pageId}`);
-});
-
 app.listen(3000);
