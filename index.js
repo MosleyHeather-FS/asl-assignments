@@ -1,27 +1,21 @@
 const express = require('express')
 const app = express()
 
-// GET /products/683-nike-large-white-shoe HTTP/1.1
-app.get('/', (request, response) => {
-    response.send('GET is GOT')
+// GET /products/all HTTP/1.1
+app.get('/', (req, res) => {
+    res.send('GET is GOT')
 })
 
 // GET /products/8719 HTTP/1.1
-app.get('/products/:productId', (request, response) => {
-    response.send(
-        'Product: ' + request.params.productId)
+app.get('/products/:id', (req, res) => {
+    res.send(
+        `Product:  ${req.params.id}`)
 })
 
-// GET /products/all?sort=price HTTP/1.1
-app.get('/products/:productId-:productSize-:productColor', (request, response) => {
-    response.send(
-        'Product: ' + request.params.productId + request.params.productSize + request.params.productColor)
-})
-
-// GET /products/all?sort=price HTTP/1.1
-app.get('/products/:all', (request, response) => {
-    response.send(
-        'Product: ' + request.params.productId + request.params.productSize + request.params.productColor)
+// GET /products/8719-small-red HTTP/1.1
+app.get('/products/:id-:size-:color', (req, res) => {
+    res.send(
+        `Product: ${req.params.id}, ${req.params.size}, ${req.params.color}`)
 })
 
 app.listen(3000)
