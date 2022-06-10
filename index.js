@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 // GET /products/all HTTP/1.1
+//comment hey
 app.get("/products/all", (req, res) => {
   if (req.query !== "{}") {
     res.send(
