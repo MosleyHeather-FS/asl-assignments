@@ -1,4 +1,4 @@
-const Products = require('../models/Products')
+const Products = require('../restfulApi/models/Products')
 
 //GET
 const index = (req, res) => {
