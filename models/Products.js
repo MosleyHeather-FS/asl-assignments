@@ -1,4 +1,4 @@
-let products = [{id: "1", "slug": "nike-shoe", "name": "Nike Shoe", "price": 21.99}]
+let products = [{id: "1", "slug": "nike-shoe", "name": "Nike Shoe", "price": "$" + 21.99}]
 
 //index
 const all = () => {
