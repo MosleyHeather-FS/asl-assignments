@@ -9,6 +9,6 @@ router.get('/:id/edit', imageCtrl.form)
 router.post('/', imageCtrl.create)
 router.post('/:id', imageCtrl.update)
 router.delete('/:id', imageCtrl.remove)
-router.post('/:id/delete', imageCtrl.remove)
+router.get('/:id/delete', imageCtrl.remove)
 
 module.exports = router

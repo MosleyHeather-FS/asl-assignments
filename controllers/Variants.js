@@ -20,7 +20,8 @@ const form = async (req, res) => {
 //GET
 const show = async (req, res) => {
   const variant = await Variant.findByPk(req.params.id)
-  res.render('views/variants/show', {variant})
+  const product = await variant.getProduct()
+  res.render('views/variants/show', {variant, product})
 };
 
 //POST

@@ -1,4 +1,4 @@
-const { Image } = require('../models')
+const { Image, Variant } = require('../models')
 
 //GET
 const index = async (req, res) => {
@@ -8,18 +8,20 @@ const index = async (req, res) => {
 
 //GET
 const form = async (req, res) => {
+  const variants = await Variant.findAll()
   if (req.params.id) {
     const image = await Image.findByPk(req.params.id)
-    res.render('views/images/edit', {image})
+    res.render('views/images/edit', {image, variants})
   } else {
-    res.render('views/images/create')
+    res.render('views/images/create', {variants})
   }
 };
 
 //GET
 const show = async (req, res) => {
   const image = await Image.findByPk(req.params.id)
-  res.render('views/images/show', {image})
+  const variant = await image.getVariant()
+  res.render('views/images/show', {image, variant})
 };
 
 //POST

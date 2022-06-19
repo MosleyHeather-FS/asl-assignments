@@ -1,14 +1,14 @@
-<form method="POST" action="/products/{% if product.id %}{{product.id}}{% endif %}">
-    {% if product.id %}
-        <input type="hidden" name="id" value="{{product.id}}">
+<form method="POST" action="/images/{% if image.id %}{{image.id}}{% endif %}">
+    {% if image.id %}
+        <input type="hidden" name="id" value="{{image.id}}">
 	{% endif %}
     <div>
-		<label for="title">Name:</label>
-		<input type="text" name="title" id="title" value="{{product.title}}"/>
-	</div>
-	<div>
-		<label for="name">Price: $</label>
-		<input type="number" name="price" id="price" step="any" value="{{product.price}}"/>
+		<label>Variant:</label>
+		<select name="variantId">
+		{% for variant in variants %}
+			<option value="{{variant.id}}" {% if variant.id == image.variantId %} selected="selected"{% endif %}>{{variant.title}}</option>
+		{% endfor %}
+		</select>
 	</div>
 	<div>
 		<input type="submit" type="submit"/>
