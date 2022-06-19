@@ -3,18 +3,18 @@ const app = express()
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: false}))
 const productRouter = require('./routes/Products')
+const variantsRouter = require('./routes/Variants')
+const imagesRouter = require('./routes/Images')
 
 app.set('views', __dirname + '/templates')
 app.set('view engine', 'twig')
 
 app.get('/', (req, res) => {
-    res.render("home.twig", {name: 'Jim', 'users': [
-        {name: 'Justin', email: 'random1@email.com'},
-        {name: 'Heather', email: 'random2@email.com'},
-        {name: 'Emilia', email: 'random3@email.com'}
-    ]})
+    res.render("views/home")
 })
 
 app.use("/products", productRouter)
+app.use("/variants", variantsRouter)
+app.use("/images", imagesRouter)
 
 app.listen(3000)
