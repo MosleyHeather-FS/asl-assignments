@@ -2,6 +2,14 @@
     {% if product.id %}
         <input type="hidden" name="id" value="{{product.id}}">
 	{% endif %}
+	<div>
+		<label for="slug">Slug:</label>
+		<input type="text" name="slug" id="slug" value="{{product.slug}}"/>
+	</div>
+	<div>
+		<label for="published">Published:</label>
+		<input type="text" name="published" id="published" value="{{product.isPublihsed}}"/>
+	</div>
     <div>
 		<label for="title">Name:</label>
 		<input type="text" name="title" id="title" value="{{product.title}}"/>
@@ -9,6 +17,10 @@
 	<div>
 		<label for="name">Price: $</label>
 		<input type="number" name="price" id="price" step="any" value="{{product.price}}"/>
+	</div>
+	<div>
+		<label for="desc">Description: </label>
+		<textarea name="desc" id="desc" col="20" rows="20"{{product.description}}></textarea>
 	</div>
 	<div>
 		<input type="submit" type="submit"/>
