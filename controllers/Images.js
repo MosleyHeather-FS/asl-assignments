@@ -27,6 +27,8 @@ const show = async (req, res) => {
 //POST
 const create = async (req, res) => {
   const image = await Image.create(req.body)
+  req.imageId = image.id
+  next()
   res.redirect('/images/' + image.id)
 };
 
@@ -37,6 +39,8 @@ const update = async (req, res) => {
       id: req.params.id
     }
   })
+  req.imageId = req.params.id
+  next()
   res.redirect('/images/' + req.params.id)
 };
 
