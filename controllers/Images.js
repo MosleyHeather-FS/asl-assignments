@@ -25,7 +25,7 @@ const show = async (req, res) => {
 };
 
 //POST
-const create = async (req, res) => {
+const create = async (req, res, next) => {
   const image = await Image.create(req.body)
   req.imageId = image.id
   next()
@@ -33,7 +33,7 @@ const create = async (req, res) => {
 };
 
 //POST
-const update = async (req, res) => {
+const update = async (req, res, next) => {
   const image = await Image.update(req.body, {
     where: {
       id: req.params.id

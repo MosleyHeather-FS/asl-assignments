@@ -1,4 +1,4 @@
-<form method="POST" action="/variants/{% if variant.id %}{{variant.id}}{% endif %}">
+<form class="text-center" method="POST" action="/variants/{% if variant.id %}{{variant.id}}{% endif %}">
 	{% if variant.id %}
 		<input type="hidden" name="id" value="{{variant.id}}">
 	{% endif %}
