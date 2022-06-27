@@ -1,4 +1,4 @@
-<form method="POST" action="/products/{% if product.id %}{{product.id}}{% endif %}">
+<form class="text-center" method="POST" action="/products/{% if product.id %}{{product.id}}{% endif %}">
     {% if product.id %}
         <input type="hidden" name="id" value="{{product.id}}">
 	{% endif %}
@@ -20,7 +20,7 @@
 	</div>
 	<div>
 		<label for="desc">Description: </label>
-		<textarea name="desc" id="desc" col="20" rows="20"{{product.description}}></textarea>
+		<textarea name="desc" id="desc" col="20" rows="10"> {{product.description}}</textarea>
 	</div>
 	<div>
 		<input type="submit" type="submit"/>
