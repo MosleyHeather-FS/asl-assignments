@@ -7,6 +7,7 @@ app.use(fileUpload())
 const productRouter = require('./routes/Products')
 const variantsRouter = require('./routes/Variants')
 const imagesRouter = require('./routes/Images')
+app.use('/public', express.static('public'))
 
 app.set('views', __dirname + '/templates')
 app.set('view engine', 'twig')

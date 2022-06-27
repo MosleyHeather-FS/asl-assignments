@@ -7,6 +7,7 @@
 	<ul class="text-center">
 		{% for image in images %}
 			<li>
+				<img style="width: 25px; height: 25px;" src="/public/images/{{ image.id }}{{ image.extension }}" />
 				{{ image.id }}
 				-
 				<a href="/images/{{ image.id }}">Edit</a>
