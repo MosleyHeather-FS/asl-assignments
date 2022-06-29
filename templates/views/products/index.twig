@@ -4,9 +4,11 @@
 	<h2 class="text-center">
 		All Products
 	</h2>
-	<ul class="text-center">
+	<ul class="text-center d-flex">
 		{% for product in products %}
 			<li>
+				<img class="w-25 h-30" src="/public/images/1.png" />
+				<br>
 				{{ product.title }}
 				{{product.price}}
 				-

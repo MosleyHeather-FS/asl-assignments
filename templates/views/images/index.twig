@@ -4,10 +4,10 @@
 	<h2 class="text-center">
 		All Images
 	</h2>
-	<ul class="text-center">
+	<ul class="text-center d-flex">
 		{% for image in images %}
 			<li>
-				<img style="width: 25px; height: 25px;" src="/public/images/{{ image.id }}{{ image.extension }}" />
+				<img class="w-25 h-30" src="/public/images/{{ image.id }}{{ image.extension }}" />
 				{{ image.id }}
 				-
 				<a href="/images/{{ image.id }}">Edit</a>

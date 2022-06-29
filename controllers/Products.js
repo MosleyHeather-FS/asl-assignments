@@ -19,6 +19,10 @@ const form = async (req, res) => {
 //GET
 const show = async (req, res) => {
   const product = await Product.findByPk(req.params.id)
+  const slug = await Product.findAll({
+    where: {
+      slug: req.params.id}
+    })
   res.render('views/products/show', {product})
 };
 
